@@ -5,24 +5,7 @@
   </head>
   <body>
     <h1>Edit article</h1>
-    <% if @article.errors.any? %>
-      <h2>The following errors prevented the article from being saved:</h2>
-      <% @article.errors.full_messages.each do |message| %>
-        <p><%= message %></p>
-      <% end %>
-    <% end %>
-    <%= form_with(model: @article, local: true)  do |f| %>
-      <p>
-        <%= f.label :title %><br>
-        <%= f.text_field :title %>
-      </p>
-      <p>
-        <%= f.label :description %><br>
-        <%= f.text_field :description %>
-      </p>
-      <p>
-        <%= f.submit %>
-      </p>
-    <% end %>
+    <%= render 'form' %>
+    <%= link_to "Cancel and return to articles listing", articles_path %>
   </body>
 </html>
