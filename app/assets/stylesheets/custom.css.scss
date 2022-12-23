@@ -1,0 +1,82 @@
+@import "bootstrap/scss/bootstrap";
+
+.container#one {
+  max-width: 900px;
+  margin-top: 10%;
+  background-color: #D3D4F4;
+  border-radius: 10px;
+  padding: 20px;
+}
+.display-4 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.lead.one {
+  margin-left: 30px;
+}
+.lead.two {
+  float: right;
+  margin-right: 30px;
+}
+p.lead {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.navbar {
+  background-color: #D3D4F4;
+}
+
+.nav-link {
+  color: black;
+}
+
+.nav-link.active {
+  font-weight: bold;
+}
+
+.container-fluid {
+  background-color: #D3D4F4;
+}
+.navbar-nav.me-auto.mb-2.mb-lg-0 {
+  width: 100%;
+}
+.nav-item.dropdown {
+  margin-left: auto;
+}
+
+.dropdown-menu.show {
+  background-color: #D3D4F4;
+}
+
+.dropdown-item:hover {
+  background-color: #6872A8;
+  color: white;
+}
+
+.btn.btn-outline-success {
+  border-color: #6872A8;
+  color: #6872A8;
+}
+.btn.btn-outline-success:hover {
+  background-color: #6872A8;
+  color: white;
+}
+
+/* Sticky Footer Classes */
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+.flex-shrink-0.py-4.bg-dark {
+  background-color: #D3D4F4 !important;
+}
+
+.container.text-center {
+  color: black;
+}
