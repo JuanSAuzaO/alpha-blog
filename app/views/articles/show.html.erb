@@ -1,16 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-  </head>
-  <body>
-    <h1>Showing article details!</h1>
-      <p><strong>Title: </strong> <%= @article.title %></p>
-      <p><strong>Description: </strong> <%= @article.description %></p>
-      <%= link_to "Edit", edit_article_path(@article) %> |
-      <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "are you sure?"} %> |
-      <%= link_to "Return to articles listing", articles_path %>
-  </body>
-</html>
+<h2 class="text-center mt-4"><%= @article.title %></h2>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-8 mt-4">
+      <div class="card text-center shadow p-3 mb-5 bg-body rounded">
+        <div class="card-header fst-italic">
+          By Shuna Zamora
+        </div>
+        <div class="card-body">
+          <div class="card-text" style="text-align: left"><%= simple_format(@article.description) %></div>
+          <%= link_to "Edit", edit_article_path(@article), class:"btn btn-info" %>
+          <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "are you sure?"}, class:"btn btn-danger" %>
+        </div>
+        <div class="card-footer text-muted">
+          <small>Created <%= time_ago_in_words(@article.created_at) %> ago, edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="row justify-content-md-center">
+  <%= link_to 'Create new article', new_article_path, class:"btn btn-primary", style: "width: 16%; margin-bottom: 20px" %>
+</div>
+</div>
