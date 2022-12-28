@@ -4,7 +4,7 @@
     <div class="col-8 mt-4">
       <div class="card text-center shadow p-3 mb-5 bg-body rounded">
         <div class="card-header fst-italic">
-          By Shuna Zamora
+          By <%= @article.user.username %>
         </div>
         <div class="card-body">
           <div class="card-text" style="text-align: left"><%= simple_format(@article.description) %></div>

@@ -5,7 +5,7 @@
     <div class="col-8 mt-4">
       <div class="card text-center shadow p-3 mb-5 bg-body rounded">
         <div class="card-header fst-italic">
-          By Shuna Zamora
+          By <%= article.user.username %>
         </div>
         <div class="card-body">
           <h5 class="card-title"><%= link_to article.title, article_path(article) %></h5>
