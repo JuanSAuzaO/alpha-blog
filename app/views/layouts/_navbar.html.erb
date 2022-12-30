@@ -16,7 +16,10 @@
           </a>
           <ul class="dropdown-menu">
             <li><%= link_to 'Sign up!', signup_path, class:"dropdown-item" %></li>
-            <li><a class="dropdown-item" href="#">Sign in</a></li>
+            <li><%= link_to 'Sign in', login_path, class:"dropdown-item" %></li>
+            <% if session[:user_id] %>
+              <li><%= link_to 'Log out', logout_path, class:"dropdown-item", method: :delete %></li>
+            <% end %>
           </ul>
         </li>
       </ul>
