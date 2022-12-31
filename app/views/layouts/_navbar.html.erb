@@ -12,13 +12,19 @@
         <%= link_to 'Articles', articles_path,  class:"nav-link" %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <% if logged_in? %>
+            <%= current_user.username %>
+          <% else %>
             User actions
+          <% end %>
           </a>
           <ul class="dropdown-menu">
+            <% if logged_in? %>
+              <li><%= link_to 'My profile', user_path(current_user), class:"dropdown-item" %></li>
+              <li><%= link_to 'Log out', logout_path, class:"dropdown-item", method: :delete %></li>
+            <% else %>
             <li><%= link_to 'Sign up!', signup_path, class:"dropdown-item" %></li>
             <li><%= link_to 'Sign in', login_path, class:"dropdown-item" %></li>
-            <% if session[:user_id] %>
-              <li><%= link_to 'Log out', logout_path, class:"dropdown-item", method: :delete %></li>
             <% end %>
           </ul>
         </li>
