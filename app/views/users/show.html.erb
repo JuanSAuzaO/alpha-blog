@@ -8,6 +8,12 @@
   </div>
 <% end %>
 
+<% if logged_in? && @user == current_user %>
+  <div class="text-center mt-4">
+    <%= link_to "Delete your profile", user_path(@user), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?"} %>
+  </div>
+<% end %>
+
 <h3 class="text-center mt-4">Articles</h3>
 
 <div class="flickr_pagination">
