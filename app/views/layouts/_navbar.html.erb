@@ -13,7 +13,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           <% if logged_in? %>
-            <%= current_user.username %>
+            <%= "(Admin)" if current_user.admin? %> <%= current_user.username %>
           <% else %>
             User actions
           <% end %>

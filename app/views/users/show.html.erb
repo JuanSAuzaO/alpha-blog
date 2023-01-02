@@ -20,7 +20,7 @@
   <%= will_paginate @articles, :container => false %>
 </div>
 
-<% if logged_in? %>
+<% if logged_in? && @user == current_user %>
   <div class="row justify-content-md-center mt-4">
     <%= link_to 'Create new article', new_article_path, class:"btn btn-primary", style: "width: 16%; margin-bottom: 20px" %>
   </div>
@@ -28,7 +28,7 @@
 
 <%= render 'articles/article' %>
 
-<% if logged_in? %>
+<% if @user.articles.length >= 5 && logged_in? && @user == current_user %>
   <div class="row justify-content-md-center">
     <%= link_to 'Create new article', new_article_path, class:"btn btn-primary", style: "width: 16%; margin-bottom: 20px" %>
   </div>

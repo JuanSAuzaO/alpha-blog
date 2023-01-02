@@ -9,7 +9,7 @@
 <% end %>
 <%= render 'article' %>
 
-<% if logged_in? %>
+<% if @articles.length >=5 && logged_in? %>
   <div class="row justify-content-md-center">
     <%= link_to 'Create new article', new_article_path, class:"btn btn-primary", style: "width: 16%; margin-bottom: 20px" %>
   </div>

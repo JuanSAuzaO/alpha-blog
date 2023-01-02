@@ -9,7 +9,7 @@
         </div>
         <div class="card-body">
           <div class="card-text" style="text-align: left"><%= simple_format(@article.description) %></div>
-          <% if logged_in? && @article.user == current_user %>
+          <% if logged_in? && (@article.user == current_user || current_user.admin?) %>
             <%= link_to "Edit", edit_article_path(@article), class:"btn btn-info" %>
             <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "are you sure?"}, class:"btn btn-danger" %>
           <% end %>
@@ -20,7 +20,9 @@
       </div>
     </div>
   </div>
-<div class="row justify-content-md-center">
-  <%= link_to 'Create new article', new_article_path, class:"btn btn-primary", style: "width: 16%; margin-bottom: 20px" %>
-</div>
+  <% if logged_in? && @article.user == current_user %>
+    <div class="row justify-content-md-center">
+      <%= link_to 'Create new article', new_article_path, class:"btn btn-primary", style: "width: 16%; margin-bottom: 20px" %>
+    </div>
+  <% end %>
 </div>
