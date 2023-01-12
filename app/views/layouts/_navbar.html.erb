@@ -8,9 +8,20 @@
         <li class="nav-item">
           <%= link_to 'ALPHA BLOG', root_path,  class:"nav-link active" %>
         </li>
-        <%= link_to 'Bloggers', users_path,  class:"nav-link" %>
-        <%= link_to 'Articles', articles_path,  class:"nav-link" %>
+        <li><%= link_to 'Bloggers', users_path,  class:"nav-link" %></li>
+        <li><%= link_to 'Articles', articles_path,  class:"nav-link" %></li>
         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categories
+          </a>
+          <ul class="dropdown-menu">
+            <% if logged_in? && current_user.admin? %>
+              <li><%= link_to 'Create category', new_category_path, class:"dropdown-item" %></li>
+            <% end %>
+            <li><%= link_to 'View categories', categories_path, class:"dropdown-item" %></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown u">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           <% if logged_in? %>
             <%= "(Admin)" if current_user.admin? %> <%= current_user.username %>

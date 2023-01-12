@@ -40,7 +40,7 @@ p.lead {
 .navbar-nav.me-auto.mb-2.mb-lg-0 {
   width: 100%;
 }
-.nav-item.dropdown {
+.nav-item.dropdown.u {
   margin-left: auto;
 }
 
@@ -53,6 +53,10 @@ p.lead {
   color: white;
 }
 
+.badge {
+  margin-right: 1em;
+}
+
 .btn.btn-outline-success {
   border-color: #6872A8;
   color: #6872A8;
@@ -63,7 +67,7 @@ p.lead {
 }
 
 .f1-l {
-  width: 270px;
+  width: 280px;
   padding: 0px;
   text-align: center;
 }

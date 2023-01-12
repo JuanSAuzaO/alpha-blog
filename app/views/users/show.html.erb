@@ -26,7 +26,7 @@
   </div>
 <% end %>
 
-<%= render 'articles/article' %>
+<%= render 'articles/article'%>
 
 <% if @user.articles.length >= 5 && logged_in? && @user == current_user %>
   <div class="row justify-content-md-center">
